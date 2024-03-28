@@ -33,4 +33,5 @@ if (id == R.id.action_internal_web) {
     return true;
 }
 ```
-![](InternalPage.png)(ExternalPage.png)
+![](InternalPage.png)
+![](ExternalPage.png)
