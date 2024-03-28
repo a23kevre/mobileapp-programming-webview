@@ -1,7 +1,7 @@
 
 # Rapport
 
-- Uppgiften var att skapa en webview där det går att få in en länkad webssida i mobilformat. Detta har skapats genom att skapa en privat WebView i "MainActivity.java" filen. Det har sedan skapats en loadUrl för den här för att kunna länka till hemsidor. Denna koden med länken lades in i funktionerna showinternalpage och showexternalpage. Dessa funktioner kallades sedan i menyfunktionen som kollar vilken av de som är selected.
+Uppgiften var att skapa en webview där det går att få in en länkad webssida i mobilformat. Detta har skapats genom att skapa en privat WebView i "MainActivity.java" filen. Det har sedan skapats en loadUrl för den här för att kunna länka till hemsidor. Denna koden med länken lades in i funktionerna showinternalpage och showexternalpage. Dessa funktioner kallades sedan i menyfunktionen som kollar vilken av de som är selected.
 ``` 
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -16,6 +16,11 @@ public void showInternalWebPage(){
     myWebView.loadUrl("file:///android_asset/html/WebView.html");
 }
 
+myWebView = findViewById(R.id.my_webview);
+myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+WebSettings webSettings = myWebView.getSettings();
+webSettings.setJavaScriptEnabled(true);
+
 if (id == R.id.action_external_web) {
     showExternalWebPage();
     Log.d("==>","Will display external web page");
@@ -28,5 +33,4 @@ if (id == R.id.action_internal_web) {
     return true;
 }
 ```
-![](InternalPage.png)
-![](ExternalPage.png)
+![](InternalPage.png)(ExternalPage.png)
