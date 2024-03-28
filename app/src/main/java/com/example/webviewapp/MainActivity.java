@@ -31,16 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         myWebView = findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
-        myWebView.loadUrl("file:///android_asset/html/WebView.html");
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-
-
-        /*
-        * Take two screenshots using the "Take a screenshot" tool in the AVD
-           showing your App. One (1) screenshot showing your internal web page and
-           one (1) screenshot showing your external web page.
-        */
     }
 
     @Override
