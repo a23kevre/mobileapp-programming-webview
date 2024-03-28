@@ -15,10 +15,12 @@ public class MainActivity extends AppCompatActivity {
     private WebView myWebView;
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+        myWebView.loadUrl("https://his.se");
     }
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
+        myWebView.loadUrl("file:///android_asset/html/WebView.html");
     }
 
     @Override
@@ -35,15 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Enable Javascript execution in your WebViewClient
-        * Enter the url to load in our WebView
-        -- Commit and push to your github fork
-        * Move the code that loads a URL into your WebView into the two methods
-          "showExternalWebPage()" and "showInternalWebPage()".
-        * Call the "showExternalWebPage()" / "showInternalWebPage()" methods
-          when you select menu options "External Web Page" or "Internal Web Page"
-          respectively
-        -- Commit and push to your github fork
         * Take two screenshots using the "Take a screenshot" tool in the AVD
            showing your App. One (1) screenshot showing your internal web page and
            one (1) screenshot showing your external web page.
@@ -66,11 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
+            showExternalWebPage();
             Log.d("==>","Will display external web page");
             return true;
         }
 
         if (id == R.id.action_internal_web) {
+            showInternalWebPage();
             Log.d("==>","Will display internal web page");
             return true;
         }
